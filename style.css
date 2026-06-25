@@ -445,3 +445,41 @@ RESPONSIVE
     opacity:1;
     visibility:visible;
       }
+/* FAQ */
+
+.faq-item{
+    background:#fff;
+    margin-bottom:15px;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.faq-question{
+    width:100%;
+    border:none;
+    background:#fff;
+    padding:20px;
+    text-align:left;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.faq-question i{
+    color:#0A2E5D;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .4s ease;
+}
+
+.faq-answer p{
+    padding:0 20px 20px;
+    text-align:left;
+}
