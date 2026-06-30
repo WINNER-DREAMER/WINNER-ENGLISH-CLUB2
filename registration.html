@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription | Winner English Club</title>
-    <meta name="description"
-        content="Formulaire d'inscription officiel de Winner English Club.">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Inscription | Winner English Club</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+(function(){
+    emailjs.init("yoqYFf1B9ZuIkVUj");
+})();
+</script>
+
 </head>
+
 <body>
+
+<!-- HEADER -->
 <header class="header">
     <div class="logo">
         <h2>Winner English Club</h2>
@@ -21,6 +31,7 @@
         <i class="fas fa-bars"></i>
     </div>
 </header>
+
 <!-- MENU -->
 <div class="side-menu" id="sideMenu">
     <div class="close-btn" id="closeBtn">
@@ -37,181 +48,148 @@
         <li><a href="testimonials.html">Témoignages</a></li>
     </ul>
 </div>
+
 <div class="overlay" id="overlay"></div>
+
 <!-- HERO -->
 <section class="hero" style="min-height:60vh;">
     <div class="hero-content">
         <h1>Inscription en Ligne</h1>
-        <p>
-            Remplissez ce formulaire pour rejoindre Winner English Club.
-        </p>
+        <p>Remplissez ce formulaire pour rejoindre Winner English Club</p>
     </div>
 </section>
-<!-- FORMULAIRE -->
+
+<!-- FORM -->
 <section>
-    <div class="container">
-        <h2>Formulaire d'Inscription</h2>
-        <p style="margin-bottom:40px;">
-            Veuillez renseigner correctement vos informations afin de faciliter le traitement de votre dossier.
-        </p>
-        <form id="registrationForm"
-            style="max-width:800px; margin:auto; background:#fff; padding:40px; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,.08);">
-            <input type="text"
-                id="fullname"
-                placeholder="Nom et Prénoms"
-                required
-                style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
-            <select id="gender"
-                required
-                style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
-                <option value="">Sexe</option>
-                <option>Masculin</option>
-                <option>Féminin</option>
-            </select>
-            <input type="number"
-                id="age"
-                placeholder="Âge"
-                required
-                style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
-            <input type="text"
-                id="nationality"
-                placeholder="Nationalité"
-                required
-                style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
-            <input type="tel"
-                id="phone"
-                placeholder="Numéro WhatsApp"
-                required
-                style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
-            <input type="email"
-                id="email"
-                placeholder="Adresse E-mail"
-                required
-                style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
-            <select id="program"
-                required
-                style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
-                <option value="">Choisissez votre module</option>
-                <option>Formation en Ligne</option>
-                <option>Formation en Présentiel</option>
-            </select>
-            <select id="source"
-                required
-                style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
-                <option value="">Comment avez-vous connu WEC ?</option>
-                <option>Facebook</option>
-                <option>WhatsApp</option>
-                <option>TikTok</option>
-                <option>Instagram</option>
-                <option>YouTube</option>
-                <option>Ancien étudiant</option>
-                <option>Recommandation d'un ami</option>
-                <option>Google</option>
-                <option>Autre</option>
-            </select>
-            <textarea id="message"
-                rows="5"
-                placeholder="Informations complémentaires (facultatif)"
-                style="width:100%;padding:15px;margin-bottom:20px;border:1px solid #ddd;border-radius:10px;"></textarea>
-            <button type="submit" class="btn-primary" style="border:none; cursor:pointer; width:100%;">
-                Envoyer l'inscription
-            </button>
-        </form>
-    </div>
+<div class="container">
+
+<h2>Formulaire d'inscription</h2>
+
+<form id="registrationForm"
+style="max-width:800px;margin:auto;background:#fff;padding:40px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.08);">
+
+<input type="text" id="fullname" placeholder="Nom et prénoms" required>
+<select id="gender" required>
+<option value="">Sexe</option>
+<option>Masculin</option>
+<option>Féminin</option>
+</select>
+
+<input type="number" id="age" placeholder="Âge" required>
+<input type="text" id="nationality" placeholder="Nationalité" required>
+<input type="tel" id="phone" placeholder="WhatsApp" required>
+<input type="email" id="email" placeholder="Email" required>
+
+<select id="program" required>
+<option value="">Choisir programme</option>
+<option>Formation en ligne</option>
+<option>Formation en présentiel</option>
+</select>
+
+<select id="source" required>
+<option value="">Comment avez-vous connu WEC ?</option>
+<option>Facebook</option>
+<option>WhatsApp</option>
+<option>TikTok</option>
+<option>Instagram</option>
+<option>Google</option>
+<option>Recommandation</option>
+</select>
+
+<textarea id="message" placeholder="Message (optionnel)"></textarea>
+
+<button type="submit" class="btn-primary" style="width:100%;">
+Envoyer l'inscription
+</button>
+
+</form>
+
+</div>
 </section>
-<!-- INFORMATIONS -->
+
+<!-- INFOS -->
 <section class="advantages">
-    <div class="container">
-        <h2>Après votre inscription</h2>
-        <div class="cards">
-            <div class="card">
-                <i class="fas fa-file-alt"></i>
-                <h3>Étude du dossier</h3>
-                <p>
-                    Notre équipe examine votre demande d'inscription.
-                </p>
-            </div>
-            <div class="card">
-                <i class="fas fa-phone"></i>
-                <h3>Prise de contact</h3>
-                <p>
-                    Nous vous contactons pour confirmer votre programme.
-                </p>
-            </div>
-            <div class="card">
-                <i class="fas fa-user-graduate"></i>
-                <h3>Début des cours</h3>
-                <p>
-                    Vous rejoignez officiellement la communauté Winner English Club.
-                </p>
-            </div>
-        </div>
-    </div>
+<div class="container">
+<h2>Après votre inscription</h2>
+
+<div class="cards">
+<div class="card">
+<i class="fas fa-file-alt"></i>
+<h3>Étude du dossier</h3>
+<p>Analyse de votre candidature.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-phone"></i>
+<h3>Contact</h3>
+<p>Nous vous contactons rapidement.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-user-graduate"></i>
+<h3>Début des cours</h3>
+<p>Vous rejoignez WEC.</p>
+</div>
+</div>
+
+</div>
 </section>
+
 <!-- CTA -->
 <section class="cta">
-    <div class="container">
-        <h2>Votre réussite commence aujourd'hui</h2>
-        <p>
-            Speak English. Win Opportunities.
-        </p>
-    </div>
+<div class="container">
+<h2>Speak English. Win Opportunities.</h2>
+</div>
 </section>
+
+<!-- FOOTER -->
 <footer>
-    <p>
-        © <span id="currentYear"></span>
-        Winner English Club.
-        Tous droits réservés.
-    </p>
+<p>© <span id="currentYear"></span> Winner English Club</p>
 </footer>
+
+<!-- WHATSAPP -->
 <a href="https://wa.me/233XXXXXXXXX"
 class="floating-whatsapp"
 target="_blank">
 <i class="fab fa-whatsapp"></i>
 </a>
-<script src="script.js"></script>
+
+<!-- SCRIPT -->
 <script>
-document.getElementById("registrationForm")
-.addEventListener("submit", function(e){
-    e.preventDefault();
-    let fullname =
-    document.getElementById("fullname").value;
-    let gender =
-    document.getElementById("gender").value;
-    let age =
-    document.getElementById("age").value;
-    let nationality =
-    document.getElementById("nationality").value;
-    let phone =
-    document.getElementById("phone").value;
-    let email =
-    document.getElementById("email").value;
-    let program =
-    document.getElementById("program").value;
-    let source =
-    document.getElementById("source").value;
-    let message =
-    document.getElementById("message").value;
-    let text =
-`NOUVELLE INSCRIPTION WEC
-Nom : ${fullname}
-Sexe : ${gender}
-Âge : ${age}
-Nationalité : ${nationality}
-WhatsApp : ${phone}
-Email : ${email}
-Programme : ${program}
-Connu via : ${source}
-Message : ${message}`;
-    let whatsappNumber =
-    "233XXXXXXXXX";
-    let url =
-    "https://wa.me/" +
-    whatsappNumber +
-    "?text=" +
-    encodeURIComponent(text);
-    window.open(url, "_blank");
+document.getElementById("registrationForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+let params = {
+fullname: document.getElementById("fullname").value,
+gender: document.getElementById("gender").value,
+age: document.getElementById("age").value,
+nationality: document.getElementById("nationality").value,
+phone: document.getElementById("phone").value,
+email: document.getElementById("email").value,
+program: document.getElementById("program").value,
+source: document.getElementById("source").value,
+message: document.getElementById("message").value
+};
+
+// ADMIN EMAIL
+emailjs.send(
+"service_k06r65m",
+"template_zjira9l",
+params
+);
+
+// AUTO REPLY CLIENT
+emailjs.send(
+"service_k06r65m",
+"template_19waxah",
+params
+);
+
+alert("Inscription envoyée avec succès !");
+this.reset();
+
 });
 </script>
+
 </body>
-              </html>
+                                          </html>
