@@ -156,7 +156,7 @@ target="_blank">
 
 <!-- SCRIPT -->
 <script>
-document.getElementById("registrationForm").addEventListener("submit", function(e){
+document.getElementById("registrationForm").addEventListener("submit", async function(e){
 e.preventDefault();
 
 let params = {
@@ -171,15 +171,17 @@ source: document.getElementById("source").value,
 message: document.getElementById("message").value
 };
 
-// ADMIN EMAIL
-emailjs.send(
+try {
+
+// ADMIN
+await emailjs.send(
 "service_k06r65m",
 "template_zjira9l",
 params
 );
 
-// AUTO REPLY CLIENT
-emailjs.send(
+// CLIENT AUTO-REPLY
+await emailjs.send(
 "service_k06r65m",
 "template_19waxah",
 params
@@ -187,6 +189,11 @@ params
 
 alert("Inscription envoyée avec succès !");
 this.reset();
+
+} catch (error) {
+console.log("Erreur EmailJS:", error);
+alert("Erreur lors de l'envoi. Réessayez.");
+}
 
 });
 </script>
