@@ -173,30 +173,37 @@ message: document.getElementById("message").value
 
 try {
 
-// ADMIN
-await emailjs.send(
+console.log("📩 Envoi admin...");
+
+let adminRes = await emailjs.send(
 "service_k06r65m",
 "template_zjira9l",
 params
 );
 
-// CLIENT AUTO-REPLY
-await emailjs.send(
+console.log("✅ Admin OK:", adminRes.status);
+
+console.log("📩 Envoi auto-reply client...");
+
+let clientRes = await emailjs.send(
 "service_k06r65m",
 "template_19waxah",
 params
 );
 
+console.log("✅ Client OK:", clientRes.status);
+
 alert("Inscription envoyée avec succès !");
 this.reset();
 
 } catch (error) {
-console.log("Erreur EmailJS:", error);
+
+console.log("❌ ERREUR EMAILJS:", error);
 alert("Erreur lors de l'envoi. Réessayez.");
+
 }
 
 });
 </script>
-
 </body>
                                           </html>
