@@ -196,10 +196,16 @@ console.log("✅ Client OK:", clientRes.status);
 alert("Inscription envoyée avec succès !");
 this.reset();
 
-} catch (error) {
+catch (error) {
 
-console.log("❌ ERREUR EMAILJS:", error);
-alert("Erreur lors de l'envoi. Réessayez.");
+console.log(error);
+
+alert(
+"Erreur : " +
+(error.status || "") +
+"\n" +
+(error.text || error.message || JSON.stringify(error))
+);
 
 }
 
