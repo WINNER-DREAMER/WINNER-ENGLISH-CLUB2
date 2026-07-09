@@ -10,14 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<!-- EMAILJS -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-(function(){
-    emailjs.init("yoqYFf1B9ZuIkVUj");
-})();
-</script>
-
 </head>
 
 <body>
@@ -147,8 +139,8 @@ Envoyer l'inscription
 <p>© <span id="currentYear"></span> Winner English Club</p>
 </footer>
 
-<!-- WHATSAPP -->
-<a href="https://wa.me/233XXXXXXXXX"
+<!-- WHATSAPP FLOTTANT -->
+<a href="https://wa.me/233547752012"
 class="floating-whatsapp"
 target="_blank">
 <i class="fab fa-whatsapp"></i>
@@ -156,60 +148,45 @@ target="_blank">
 
 <!-- SCRIPT -->
 <script>
-document.getElementById("registrationForm").addEventListener("submit", async function(e){
-e.preventDefault();
+document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-let params = {
-fullname: document.getElementById("fullname").value,
-gender: document.getElementById("gender").value,
-age: document.getElementById("age").value,
-nationality: document.getElementById("nationality").value,
-phone: document.getElementById("phone").value,
-email: document.getElementById("email").value,
-program: document.getElementById("program").value,
-source: document.getElementById("source").value,
-message: document.getElementById("message").value
-};
+document.getElementById("registrationForm").addEventListener("submit", function(e){
+    e.preventDefault();
 
-try {
+    let fullname    = document.getElementById("fullname").value;
+    let gender      = document.getElementById("gender").value;
+    let age         = document.getElementById("age").value;
+    let nationality = document.getElementById("nationality").value;
+    let phone       = document.getElementById("phone").value;
+    let email       = document.getElementById("email").value;
+    let program     = document.getElementById("program").value;
+    let source      = document.getElementById("source").value;
+    let message     = document.getElementById("message").value;
 
-console.log("📩 Envoi admin...");
+    // Numéro WhatsApp du club (format international, sans + ni espaces)
+    let clubNumber = "233547752012";
 
-let adminRes = await emailjs.send(
-"service_k06r65m",
-"template_zjira9l",
-params
-);
+    // Construction du message pré-rempli
+    let texte =
+        "Nouvelle inscription - Winner English Club\n\n" +
+        "Nom et prénoms : " + fullname + "\n" +
+        "Sexe : " + gender + "\n" +
+        "Âge : " + age + "\n" +
+        "Nationalité : " + nationality + "\n" +
+        "Téléphone/WhatsApp : " + phone + "\n" +
+        "Email : " + email + "\n" +
+        "Programme : " + program + "\n" +
+        "Source : " + source + "\n" +
+        "Message : " + (message || "Aucun");
 
-console.log("✅ Admin OK:", adminRes.status);
+    let lien = "https://wa.me/" + clubNumber + "?text=" + encodeURIComponent(texte);
 
-console.log("📩 Envoi auto-reply client...");
+    // Ouvre WhatsApp avec le message prêt à être envoyé
+    window.open(lien, "_blank");
 
-let clientRes = await emailjs.send(
-"service_k06r65m",
-"template_19waxah",
-params
-);
-
-console.log("✅ Client OK:", clientRes.status);
-
-alert("Inscription envoyée avec succès !");
-this.reset();
-
-catch (error) {
-
-console.log(error);
-
-alert(
-"Erreur : " +
-(error.status || "") +
-"\n" +
-(error.text || error.message || JSON.stringify(error))
-);
-
-}
-
+    this.reset();
 });
 </script>
+
 </body>
-                                          </html>
+</html>
